@@ -40,9 +40,7 @@ class LRUCache(BaseCaching):
         """
         if key is None or key not in self.cache_data:
             return None
-        
         # Update usage order when an item is accessed
         self.usage_order.remove(key)
         self.usage_order.append(key)
-        
         return self.cache_data.get(key)

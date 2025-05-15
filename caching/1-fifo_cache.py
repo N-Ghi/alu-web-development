@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 class FIFOCache(BaseCaching):
     """ FIFOCache defines:
-      - Caching system using FIFO algorithm
+        - Caching system using FIFO algorithm
     """
 
     def __init__(self):
@@ -29,7 +29,6 @@ class FIFOCache(BaseCaching):
                 first_key = self.queue.pop(0)
                 del self.cache_data[first_key]
                 print("DISCARD: {}".format(first_key))
-            
             self.cache_data[key] = item
             self.queue.append(key)
 

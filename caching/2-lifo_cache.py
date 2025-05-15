@@ -32,7 +32,6 @@ class LIFOCache(BaseCaching):
                 last_key = self.stack.pop()
                 del self.cache_data[last_key]
                 print("DISCARD: {}".format(last_key))
-            
             self.cache_data[key] = item
             self.stack.append(key)
 
