@@ -96,3 +96,4 @@ class LFUCache(BaseCaching):
         if new_freq not in self.frequency_lists:
             self.frequency_lists[new_freq] = []
         self.frequency_lists[new_freq].append(key)
+        
