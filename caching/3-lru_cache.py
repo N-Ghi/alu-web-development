@@ -31,7 +31,6 @@ class LRUCache(BaseCaching):
                 lru_key = self.usage_order.pop(0)
                 del self.cache_data[lru_key]
                 print("DISCARD: {}".format(lru_key))
-            
             self.cache_data[key] = item
             self.usage_order.append(key)
 

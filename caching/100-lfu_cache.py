@@ -14,7 +14,7 @@ class LFUCache(BaseCaching):
         """
         super().__init__()
         self.frequencies = {}  # key -> frequency count
-        self.frequency_lists = {}  # frequency -> list of keys with that frequency
+        self.frequency_lists = {}
         self.min_frequency = 0
 
     def put(self, key, item):
@@ -71,7 +71,6 @@ class LFUCache(BaseCaching):
         current_freq = self.frequencies[key]
         # Remove from current frequency list
         self.frequency_lists[current_freq].remove(key)
-        
         # Clean up empty frequency lists
         if not self.frequency_lists[current_freq]:
             del self.frequency_lists[current_freq]

@@ -23,7 +23,6 @@ class LIFOCache(BaseCaching):
 
         if key in self.cache_data:
             self.cache_data[key] = item
-            # For existing keys, remove from stack and add again to make it the most recent
             if key in self.stack:
                 self.stack.remove(key)
             self.stack.append(key)
